@@ -5,6 +5,12 @@ L'architettura è a Microservizi, quindi con due applicativi distinti, che comun
 - BooksManagementService: Il secondo è il microservizio che gestisce i libri. L'autore potrà inserire un nuovo libro nel database, con relative informazioni, potrà modificarlo (solo se appartiene a lui il libro) e potrà cancellarlo. Lo User potrà vedere che libri ci sono nel database, e fare alcune read personalizzate come: GetAllBooks, ReadBookById, GetAllByAuthor e GetAllByGenre. 
 - Il database è inteso come SQL Server (relazionale).
 
+Il secondo microservizio chiama il primo per ottenere informazioni che sono contenute nei Claims del JSON Web Token (JWT), come l'ID e lo Usertype (Admin o User) di chi è loggato al momento; 
+
+Il Database ha tre tabelle: Users (dati di accesso e usertype), UserDetails (anagrafica) e Books (info inerenti ai singoli libri);
+Essendo il database relazionale, c'è una relazione nella tabella Books, ossia su AuthorId, che è una OneToOne a UserDetails (l'anagrafica dell'utente);
+C'è inoltra un'altra OneToOne tra User e UserDetails;
+
 Il genere del libro nell'applicativo è un Enum:
 Autobiography = 0, 
 Biography = 1, 
