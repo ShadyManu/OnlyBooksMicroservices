@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "mvXz2RXVKzxkkTPIge47eCAQoDBej/AIF2zQdibzFeY=",
+  "Source": "AuthSrv",
+  "BasePath": "_content/AuthSrv",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
