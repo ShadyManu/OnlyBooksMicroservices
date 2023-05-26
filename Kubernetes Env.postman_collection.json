@@ -1,0 +1,651 @@
+{
+	"info": {
+		"_postman_id": "26d5281c-211e-4aa2-9941-b5b9eea9dcc7",
+		"name": "Kubernetes Env",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26153867"
+	},
+	"item": [
+		{
+			"name": "Auth Service (Node Port)",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"author@author.it\",\r\n  \"password\": \"author\",\r\n  \"role\": 0,\r\n  \"userDetails\": {\r\n    \"name\": \"AuthorName\",\r\n    \"surname\": \"AuthorSurname\",\r\n    \"username\": \"AuthorNickname\",\r\n    \"address\": \"Address st\",\r\n    \"favouriteGenre\": 1\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:32637/Auth/Register",
+							"host": [
+								"localhost"
+							],
+							"port": "32637",
+							"path": [
+								"Auth",
+								"Register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"author@author.it\",\r\n  \"password\": \"author\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:32637/Auth/Login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "32637",
+							"path": [
+								"Auth",
+								"Login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetMyId",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiIxIiwidW5pcXVlX25hbWUiOiJ1c2VyQHVzZXIuaXQiLCJyb2xlIjoiVXNlciIsIm5iZiI6MTY4NTA5Nzc0MSwiZXhwIjoxNjg1MTg0MTQxLCJpYXQiOjE2ODUwOTc3NDF9.4hMkgxeaCgZafi7pH6FZOrYBuYvobEKIsYH3_Gjyzd_rEZT8q57ItAFOj6wWcvq3n6COXMVGUrySLLIGUl_G0g",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:32637/Auth/GetMyId",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "32637",
+							"path": [
+								"Auth",
+								"GetMyId"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Auth Service (Nginx)",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"string@string.it\",\r\n  \"password\": \"string\",\r\n  \"role\": 0,\r\n  \"userDetails\": {\r\n    \"name\": \"string\",\r\n    \"surname\": \"string\",\r\n    \"username\": \"string\",\r\n    \"address\": \"string\",\r\n    \"favouriteGenre\": 0\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://onlyb.com/Auth/Register",
+							"protocol": "http",
+							"host": [
+								"onlyb",
+								"com"
+							],
+							"path": [
+								"Auth",
+								"Register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetMyId",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"string\",\r\n  \"password\": \"string\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://onlyb.com/Auth/GetMyId",
+							"protocol": "http",
+							"host": [
+								"onlyb",
+								"com"
+							],
+							"path": [
+								"Auth",
+								"GetMyId"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiIxIiwidW5pcXVlX25hbWUiOiJzdHJpbmdhYUBzdHJpbmdhYS5pdCIsInJvbGUiOiJBZG1pbiIsIm5iZiI6MTY4NTA4NTM3NiwiZXhwIjoxNjg1MTcxNzc2LCJpYXQiOjE2ODUwODUzNzZ9.V6EY6fAT6z63RuLSffdSnmaP50Lw3JSQM2cBglmHiULv9Rp0J-D6y5NmcJUugWfJQk99s-oggiM1RQCfyVDJDg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"stringaa@stringaa.it\",\r\n  \"password\": \"string\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://onlyb.com/Auth/Login",
+							"protocol": "http",
+							"host": [
+								"onlyb",
+								"com"
+							],
+							"path": [
+								"Auth",
+								"Login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "BooksManagementService (Node Port)",
+			"item": [
+				{
+					"name": "InsertBook",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiIzIiwidW5pcXVlX25hbWUiOiJhdXRob3JAYXV0aG9yLml0Iiwicm9sZSI6IkFkbWluIiwibmJmIjoxNjg1MDk4MTQyLCJleHAiOjE2ODUxODQ1NDIsImlhdCI6MTY4NTA5ODE0Mn0.R3XXnECs4oogkLSHuDX-BMbK8VHqT7yG_lC1DJejSMGpvpGDCwoNIoyjctSprPSZoh9v__xKxhj0I_aWW70FPQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"title\": \"My Book\",\r\n  \"genre\": 5,\r\n  \"description\": \"Description\",\r\n  \"price\": 10\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:31758/api/Book/InsertBook",
+							"host": [
+								"localhost"
+							],
+							"port": "31758",
+							"path": [
+								"api",
+								"Book",
+								"InsertBook"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAllBooks",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiIxIiwidW5pcXVlX25hbWUiOiJzdHJpbmdhYUBzdHJpbmdhYS5pdCIsInJvbGUiOiJBZG1pbiIsIm5iZiI6MTY4NTA4ODQ3MCwiZXhwIjoxNjg1MTc0ODcwLCJpYXQiOjE2ODUwODg0NzB9.KYnfdpgqaFpxP_Sre360uTs1iHqlLx7P4M4vGehHSDsMzQ6jKeVPDmlhBulveW6poopJV5JJo1Cd4B0cKMpK3Q",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:31758/api/Book/GetAllBooks",
+							"host": [
+								"localhost"
+							],
+							"port": "31758",
+							"path": [
+								"api",
+								"Book",
+								"GetAllBooks"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ReadBookById",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiIxIiwidW5pcXVlX25hbWUiOiJzdHJpbmdhYUBzdHJpbmdhYS5pdCIsInJvbGUiOiJBZG1pbiIsIm5iZiI6MTY4NTA4OTAzNSwiZXhwIjoxNjg1MTc1NDM1LCJpYXQiOjE2ODUwODkwMzV9.LuJcugtjLPijyCFJHsOItP4ddZ8sVFrNob6HEKnyFQB_IDskx-83ylJId_eWbtBF0XTbuHmlFj4nUuCM3zaUeQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:31758/api/Book/ReadBookById?idBook=1",
+							"host": [
+								"localhost"
+							],
+							"port": "31758",
+							"path": [
+								"api",
+								"Book",
+								"ReadBookById"
+							],
+							"query": [
+								{
+									"key": "idBook",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAllByAuthor",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiIxIiwidW5pcXVlX25hbWUiOiJzdHJpbmdhYUBzdHJpbmdhYS5pdCIsInJvbGUiOiJBZG1pbiIsIm5iZiI6MTY4NTA4OTAzNSwiZXhwIjoxNjg1MTc1NDM1LCJpYXQiOjE2ODUwODkwMzV9.LuJcugtjLPijyCFJHsOItP4ddZ8sVFrNob6HEKnyFQB_IDskx-83ylJId_eWbtBF0XTbuHmlFj4nUuCM3zaUeQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:31758/api/Book/GetAllByAuthor?idAuthor=3",
+							"host": [
+								"localhost"
+							],
+							"port": "31758",
+							"path": [
+								"api",
+								"Book",
+								"GetAllByAuthor"
+							],
+							"query": [
+								{
+									"key": "idAuthor",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAllByGenre",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiIxIiwidW5pcXVlX25hbWUiOiJzdHJpbmdhYUBzdHJpbmdhYS5pdCIsInJvbGUiOiJBZG1pbiIsIm5iZiI6MTY4NTA4OTAzNSwiZXhwIjoxNjg1MTc1NDM1LCJpYXQiOjE2ODUwODkwMzV9.LuJcugtjLPijyCFJHsOItP4ddZ8sVFrNob6HEKnyFQB_IDskx-83ylJId_eWbtBF0XTbuHmlFj4nUuCM3zaUeQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:31758/api/Book/GetAllByGenre?genre=1",
+							"host": [
+								"localhost"
+							],
+							"port": "31758",
+							"path": [
+								"api",
+								"Book",
+								"GetAllByGenre"
+							],
+							"query": [
+								{
+									"key": "genre",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateMyBook",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiIzIiwidW5pcXVlX25hbWUiOiJhdXRob3JAYXV0aG9yLml0Iiwicm9sZSI6IkFkbWluIiwibmJmIjoxNjg1MDk4MTQyLCJleHAiOjE2ODUxODQ1NDIsImlhdCI6MTY4NTA5ODE0Mn0.R3XXnECs4oogkLSHuDX-BMbK8VHqT7yG_lC1DJejSMGpvpGDCwoNIoyjctSprPSZoh9v__xKxhj0I_aWW70FPQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":1,\r\n    \"title\":null,\r\n    \"genre\":4,\r\n    \"description\":\"My Edited Description\",\r\n    \"price\":20\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:31758/api/Book/UpdateMyBook",
+							"host": [
+								"localhost"
+							],
+							"port": "31758",
+							"path": [
+								"api",
+								"Book",
+								"UpdateMyBook"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteMyBook",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiIzIiwidW5pcXVlX25hbWUiOiJhdXRob3JAYXV0aG9yLml0Iiwicm9sZSI6IkFkbWluIiwibmJmIjoxNjg1MDk4NDg2LCJleHAiOjE2ODUxODQ4ODYsImlhdCI6MTY4NTA5ODQ4Nn0.qY4OpSYDPsBXsu0ceZS796RKDKeFwxwECE5CNcYOwH5UyJ22xQuPMNRNTP37bXhf7QLl5--zzvX7O2iL8_Ugcw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:31758/api/Book/DeleteMyBook?idBook=1",
+							"host": [
+								"localhost"
+							],
+							"port": "31758",
+							"path": [
+								"api",
+								"Book",
+								"DeleteMyBook"
+							],
+							"query": [
+								{
+									"key": "idBook",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "BooksManagementService (Nginx)",
+			"item": [
+				{
+					"name": "InsertBook",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiIxIiwidW5pcXVlX25hbWUiOiJzdHJpbmdhYUBzdHJpbmdhYS5pdCIsInJvbGUiOiJBZG1pbiIsIm5iZiI6MTY4NTA4ODQ3MCwiZXhwIjoxNjg1MTc0ODcwLCJpYXQiOjE2ODUwODg0NzB9.KYnfdpgqaFpxP_Sre360uTs1iHqlLx7P4M4vGehHSDsMzQ6jKeVPDmlhBulveW6poopJV5JJo1Cd4B0cKMpK3Q",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"title\": \"Un Libro\",\r\n  \"genre\": 3,\r\n  \"description\": \"Description\",\r\n  \"price\": 10\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://onlyb.com/api/Book/InsertBook",
+							"protocol": "http",
+							"host": [
+								"onlyb",
+								"com"
+							],
+							"path": [
+								"api",
+								"Book",
+								"InsertBook"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAllBooks",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiIxIiwidW5pcXVlX25hbWUiOiJzdHJpbmdhYUBzdHJpbmdhYS5pdCIsInJvbGUiOiJBZG1pbiIsIm5iZiI6MTY4NTA4ODQ3MCwiZXhwIjoxNjg1MTc0ODcwLCJpYXQiOjE2ODUwODg0NzB9.KYnfdpgqaFpxP_Sre360uTs1iHqlLx7P4M4vGehHSDsMzQ6jKeVPDmlhBulveW6poopJV5JJo1Cd4B0cKMpK3Q",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://onlyb.com/api/Book/GetAllBooks",
+							"protocol": "http",
+							"host": [
+								"onlyb",
+								"com"
+							],
+							"path": [
+								"api",
+								"Book",
+								"GetAllBooks"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ReadBookById",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiIxIiwidW5pcXVlX25hbWUiOiJzdHJpbmdhYUBzdHJpbmdhYS5pdCIsInJvbGUiOiJBZG1pbiIsIm5iZiI6MTY4NTA4OTAzNSwiZXhwIjoxNjg1MTc1NDM1LCJpYXQiOjE2ODUwODkwMzV9.LuJcugtjLPijyCFJHsOItP4ddZ8sVFrNob6HEKnyFQB_IDskx-83ylJId_eWbtBF0XTbuHmlFj4nUuCM3zaUeQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://onlyb.com/api/Book/ReadBookById?idBook=1",
+							"protocol": "http",
+							"host": [
+								"onlyb",
+								"com"
+							],
+							"path": [
+								"api",
+								"Book",
+								"ReadBookById"
+							],
+							"query": [
+								{
+									"key": "idBook",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAllByAuthor",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiIxIiwidW5pcXVlX25hbWUiOiJzdHJpbmdhYUBzdHJpbmdhYS5pdCIsInJvbGUiOiJBZG1pbiIsIm5iZiI6MTY4NTA4OTAzNSwiZXhwIjoxNjg1MTc1NDM1LCJpYXQiOjE2ODUwODkwMzV9.LuJcugtjLPijyCFJHsOItP4ddZ8sVFrNob6HEKnyFQB_IDskx-83ylJId_eWbtBF0XTbuHmlFj4nUuCM3zaUeQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://onlyb.com/api/Book/GetAllByAuthor?idAuthor=1",
+							"protocol": "http",
+							"host": [
+								"onlyb",
+								"com"
+							],
+							"path": [
+								"api",
+								"Book",
+								"GetAllByAuthor"
+							],
+							"query": [
+								{
+									"key": "idAuthor",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAllByGenre",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiIxIiwidW5pcXVlX25hbWUiOiJzdHJpbmdhYUBzdHJpbmdhYS5pdCIsInJvbGUiOiJBZG1pbiIsIm5iZiI6MTY4NTA4OTAzNSwiZXhwIjoxNjg1MTc1NDM1LCJpYXQiOjE2ODUwODkwMzV9.LuJcugtjLPijyCFJHsOItP4ddZ8sVFrNob6HEKnyFQB_IDskx-83ylJId_eWbtBF0XTbuHmlFj4nUuCM3zaUeQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://onlyb.com/api/Book/GetAllByGenre?genre=2",
+							"protocol": "http",
+							"host": [
+								"onlyb",
+								"com"
+							],
+							"path": [
+								"api",
+								"Book",
+								"GetAllByGenre"
+							],
+							"query": [
+								{
+									"key": "genre",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
