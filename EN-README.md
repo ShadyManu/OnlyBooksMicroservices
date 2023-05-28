@@ -74,7 +74,8 @@ The address must match the address assigned to the localhost in the same documen
         Example: http:///onlyb.com/api/Book/InsertBook 
 
 This is possible because we started the optional file ingress-srv.yaml. If you open it with Visual Studio Code, you can see inside of it the mapping of the two microservices, mapped with their internal Cluster IP in Kubernetes. 
-I’ve prepared a list of calls through Postman. To import them, open Postman, Click on Collections, Import, and paste the following link: https///api.postman.com/collections/26153867-26d5281c-211e-4aa2-9941-b5b9eea9dcc7?access_key=PMAT-01H1C362JNGNGDXA2XHQ8Y193H 
+I’ve prepared a list of calls through Postman. To import them, open Postman, Click on Collections, Import, and paste the following link: 
+https://api.postman.com/collections/26153867-35f0a0eb-8456-4df1-9391-acec4f538b47?access_key=PMAT-01H1GX89AXDK3XFZWZJYH54D95
 Otherwise in the K8S folder there is a JSON file to import to Postman. 
 If you import the file I prepared (in both ways), be careful to change the address with your Node Ports as explained, as they are generated randomly, and mine would not match yours. While if you choose the Nginx method, it should already coincide all.
 
