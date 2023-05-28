@@ -86,8 +86,9 @@ L’indirizzo deve coincidere con quello che nello stesso documento è assegnato
 Questo è possibile perché prima abbiamo avviato il file facoltativo ingress-srv.yaml . Se lo aprite con Visual Studio Code, potete vedere al suo interno la mappatura dei due microservizi, mappati con il loro Cluster IP interno a Kubernetes.
 Ho preparato una lista di chiamate tramite Postman. Per usarle, dovete avere un account Postman, e seguire questo link:
 https://www.postman.com/shadymanu/workspace/onlybooksgithub
+
 Altrimenti nella cartella K8S cè un file JSON da importare sempre su Postman (Import e selezionate/droppate il file JSON)
-Se si importa il file che ho preparato (in entrambi i modi), fare attenzione a cambiare l’indirizzo con le proprie Node Ports come spiegato, poiché vengono generate in modo casuale, e le mie non corrisponderebbero alle vostre. Mentre se si sceglie il metodo Nginx, dovrebbe già coincidere tutto.
+Sia che si importa il file che ho preparato sia che si segue il link, fare attenzione a cambiare l’indirizzo con le proprie Node Ports come spiegato, poiché vengono generate in modo casuale, e le mie non corrisponderebbero alle vostre. Mentre se si sceglie il metodo Nginx, dovrebbe già coincidere tutto.
 
 Per domande o consigli su come migliorare il progetto, potete contattarmi sulla mia email personale: manuelraso1994@gmail.com
 Se ti fa piacere, seguimi su LinkedIn: https://www.linkedin.com/in/manuel-raso/
